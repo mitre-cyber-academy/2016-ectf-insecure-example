@@ -1,0 +1,2 @@
+{"device_key": "12345", "flag": "<theflag2>", "pin": "129456", "device_id": "111111111111111"}
+{"device_key": "12345", "flag": "<theflag>", "pin": "999999", "device_id": "000000000000000"}

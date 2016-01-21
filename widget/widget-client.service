@@ -1,0 +1,10 @@
+[Unit]
+Description=eCTF example code for Widget - has no real security whatsoever
+
+[Service]
+ExecStart=/usr/local/bin/widget_client.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
