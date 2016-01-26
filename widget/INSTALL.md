@@ -36,9 +36,9 @@
 
     sudo systemctl daemon-reload
     
-    sudo systemctl enable embedded-ctf-client.service
+    sudo systemctl enable widget-client.service
 
 5. Reboot the BeagleBone, or execute
 
-    sudo systemctl start embedded-ctf-client.service
+    sudo systemctl start widget-client.service
 
