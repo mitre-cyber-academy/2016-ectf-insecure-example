@@ -32,13 +32,19 @@
     
     keypad.ino.standard.hex -> /usr/local/share/avr/
 
-4. Enable the widget service on the BeagleBone by executing:
+4. Make sure the scripts have execute permissions:
+
+    sudo chmod +x /usr/local/bin/widget_client.py
+
+    sudo chmod +x /usr/local/bin/program_avr.sh
+
+5. Enable the widget service on the BeagleBone by executing:
 
     sudo systemctl daemon-reload
     
     sudo systemctl enable widget-client.service
 
-5. Reboot the BeagleBone, or execute
+6. Reboot the BeagleBone, or execute
 
     sudo systemctl start widget-client.service
 
