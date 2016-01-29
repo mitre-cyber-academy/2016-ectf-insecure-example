@@ -93,7 +93,7 @@ If you're doing this from a Mac or Linux machine, follow these instructions:
 To test that the full system works you need to provide a "proxy" to redirect traffic from the
 Widget to the Server.  [Socat](http://linux.die.net/man/1/socat) is a good tool to do this and can
 be installed with [Cygwin](https://cygwin.com).  You may also want to install [netcat](http://nc110.sourceforge.net) 
-for viewing the debug console on the Widget.
+for viewing the debug console on the Widget.  **Do not forget to install both the Keypad and the Program Headers (with jumpers to enable programming the ATMega) on your CryptoCape.**
 
 1. Plug the BeagleBone into a host computer using the USB cable.  
    Verify that a new virtual ethernet adapter was created on your host computer with IP address 
