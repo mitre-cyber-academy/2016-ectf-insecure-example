@@ -122,7 +122,7 @@ If you're doing this from a Mac or Linux machine, follow these instructions:
    you should use the raw disk device, which is prefixed with an "r". So if your SD card device is
    `/dev/disk2`, use `/dev/rdisk2` instead. Now execute the following command:
 
-    `dd bs=1m if=<image file> of=<device>`
+    `dd bs=1m if=<image file> of=<device>` (If the image is an img.gz it must be decompressed before running this step)
     
 6. From here you can start following from step 8 of the [instructions on the BeagleBone web site](http://beagleboard.org/getting-started)
 
