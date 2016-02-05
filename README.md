@@ -10,39 +10,52 @@ document, but is not implemented securely.
 
 The code for the server is contained in the "door_app" directory. 
 
-* server.py:
-    The main DoorApp code that runs the server for accepting data, reading registered-widgets.txt
-    file, verifying submitted PINs, adding requests to the requested-widgets.txt file, and sending
+* **server.py**
+
+    The main DoorApp code that runs the server for accepting data, 
+    reading registered-widgets.txt file, verifying submitted PINs, adding requests to the requested-widgets.txt file, and sending
     responses back to the BeagleBone.  It is written for Python 2.7.
 
-* Dockerfile
-    This is the file that defines the docker image. 
+* **Dockerfile**
 
-* data directory
-    This directory contains the registered-widgets.txt file. The directory is set up in this way to allow for
-    the data directory to be specified as a volume for the docker image. By placing the text files in a volume
-    the data is persisted even when the docker image is stopped, rebuilt, or restarted. 
+    Defines the docker image. 
+
+* **data**
+
+    This directory contains the registered-widgets.txt file. 
+    The Dockerfile specifies this directory as a volume for the docker image. 
+    By placing the text files in a volume, the data is persisted even when the 
+    docker image is stopped, rebuilt, or restarted. 
+
+* **data/registered-widgets.txt**
+
+    A configuration file that contains information for each of the registered widgets.
 
 ## Widget code
 
 The code for the BeagleBone portion is contained in the "widget" directory. 
 
-* INSTALL.md:
+* **INSTALL.md**
+
     Contains instructions for installing the widget code onto a new BeagleBone.
 
-* widget_client.py:
+* **widget_client.py**
+
     The main code that runs the client application. It is written for Python 2.7.
 
-* keypad/keypad.ino:
+* **keypad/keypad.ino**
+
     The code that runs on the AVR on the CryptoCape. It must be
     compiled to a hex file using the Arduino tools. See INSTALL.md for
     instructions.
 
-* program_avr.sh:
+* **program_avr.sh**
+
     A script to program the AVR on the CryptoCape. Uses avrdude,
     which must be installed separately. See INSTALL.md for instructions.
 
-* widget-client.service:
+* **widget-client.service**
+
     A systemd service file for the widget client. Using systemd allows
     us to start the client at boot, and to restart it if anything goes wrong.
 
@@ -63,8 +76,8 @@ below:
 In this directory there should be:
     * server.py
     * Dockerfile
-    * data/ 
-    ..* registered-widgets.txt
+    * data/
+        * registered-widgets.txt
 
 3. In the door_app directory run the following commands:
 
@@ -130,7 +143,7 @@ To test that the full system works you need to provide a "proxy" to redirect tra
 Widget to the Server.  [Socat](http://linux.die.net/man/1/socat) is a good tool to do this and can
 be installed with [Cygwin](https://cygwin.com).  You may also want to install [netcat](http://nc110.sourceforge.net) 
 for viewing the debug console on the Widget.
-**Do not forget to install both the Keypad and the Program Headers (with jumpers to enable 
+**Do not forget to install both the Keypad and the Program Headers (with jumpers to enable
 programming the ATMega) on your CryptoCape.**
 
 1. Plug the BeagleBone into a host computer using the USB cable.  
@@ -147,8 +160,8 @@ programming the ATMega) on your CryptoCape.**
  
     `socat -v tcp-listen:5000,fork tcp-connect:localhost:9500`
 
-    Note: It is possible docker did not startup on localhost.  You can view what IP Docker is using 
-	with Kitematic
+    Note: It is possible that Docker did not startup on localhost.  You can view what IP Docker is 
+	using with Kitematic
 
 5. Send a registration request from the Widget by entering `*#*#*#*#` on the keypad.
 
