@@ -15,8 +15,8 @@ DEFAULT_PIN = '123456'
 DEFAULT_FLAG = '<theflag>'
 
 ROOTDIR = os.path.dirname(__file__)
-REGISTERED_FILE = os.path.join(ROOTDIR, 'registered-widgets.txt')
-REQUESTED_FILE = os.path.join(ROOTDIR, 'requested-widgets.txt')
+REGISTERED_FILE = os.path.join(ROOTDIR, 'data', 'registered-widgets.txt')
+REQUESTED_FILE = os.path.join(ROOTDIR, 'data', 'requested-widgets.txt')
      
 class Widget(object):
     """
